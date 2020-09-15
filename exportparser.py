@@ -31,14 +31,14 @@ class QRadarRule:
         - ruleText=%s""" % (self.id, self.enabled, self.buildingBlock, self.owner, self.name, self.notes, self.ruleText)
 
 
-filelist = [f for f in os.scandir(RES_PATH + "/rules") if f.endswith(".md")]
-for f in filelist:
-    os.remove(os.path.join(RES_PATH + "/rules", f))
+# filelist = [f for f in os.scandir(RES_PATH + "/rules") if f.endswith(".md")]
+# for f in filelist:
+#     os.remove(os.path.join(RES_PATH + "/rules", f))
 
-filelist = [f for f in os.scandir(
-    RES_PATH + "/building_blocks") if f.endswith(".md")]
-for f in filelist:
-    os.remove(os.path.join(RES_PATH + "/building_blocks", f))
+# filelist = [f for f in os.scandir(
+#     RES_PATH + "/building_blocks") if f.endswith(".md")]
+# for f in filelist:
+#     os.remove(os.path.join(RES_PATH + "/building_blocks", f))
 
 
 tree = ET.parse('export.xml')
