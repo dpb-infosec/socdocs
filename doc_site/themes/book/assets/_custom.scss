@@ -1,0 +1,25 @@
+/* You can add custom styles here. */
+
+// @import "plugins/numbered";
+
+table tr th:empty {
+    display: none;
+  }
+
+// pre code,  /* stackoverflow */
+// .md:not(.use-csslab) pre code
+//  {
+//   white-space: ;
+// }
+
+pre,
+code {
+  overflow: auto;
+  word-wrap: normal;
+  white-space: pre-wrap;
+}
+
+pre {
+  margin: 0 0 1rem 0;
+  overflow: auto;
+}

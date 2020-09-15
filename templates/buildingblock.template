@@ -1,0 +1,24 @@
+---
+title: "{{rule.name}}"
+description: "{{rule.name}}"
+date: {{rule.last_modified}}
+draft: false
+---
+
+# {{rule.name}}
+
+## General info
+
+|
+|-|-|
+| **Status**        |{% if rule.enabled == "true" %} Enabled {% else %} Disabled {% endif %}|
+| **Last Modified** |{{rule.last_modified}}|
+| **Origin**        |{{rule.origin}}|
+
+## Usecase Description
+{{rule.notes}}
+
+## Rule Definition
+``` qradar
+{{rule.ruleText}}
+```
