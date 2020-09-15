@@ -34,6 +34,8 @@ jobs:
     
       - name: Pip Installer
         uses: BSFishy/pip-action@v1
+        with:
+          requirements: requirements.txt
 
       - name: Run socdocs script
         run: |
