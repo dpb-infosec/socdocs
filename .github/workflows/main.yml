@@ -38,8 +38,9 @@ jobs:
           requirements: requirements.txt
 
       - name: Run socdocs script
+      # cd $GITHUB_WORKSPACE/socdocs/soc-qradar-rule-exporter
         run: |
-          cd $GITHUB_WORKSPACE/socdocs/soc-qradar-rule-exporter
+          pwd  
           python exportparser.py
         
       - name: Build and push Docker images
