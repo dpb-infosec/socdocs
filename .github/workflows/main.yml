@@ -40,7 +40,8 @@ jobs:
       - name: Run socdocs script
       # cd $GITHUB_WORKSPACE/socdocs/soc-qradar-rule-exporter
         run: |
-          pwd  
+          pwd 
+          ls
           python exportparser.py
         
       - name: Build and push Docker images
