@@ -46,5 +46,5 @@ jobs:
           path: . # optional, default is .
           # Path to the Dockerfile (Default is '{path}/Dockerfile')
           dockerfile: $GITHUB_WORKSPACE/soc-qradar-rule-exporter/Dockerfile# optional
-
+          repository: "dpbinfosec/socdocs"
       
