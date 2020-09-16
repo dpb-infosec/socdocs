@@ -40,17 +40,15 @@ jobs:
           requirements: requirements.txt
 
       - name: Run socdocs script
-      # cd $GITHUB_WORKSPACE/socdocs/soc-qradar-rule-exporter
+      # cd $GITHUB_WORKSPACE/socdocs/
         run: |
-          pwd 
-          ls
           python exportparser.py
         
       - name: Build and push Docker images
-        uses: docker/build-push-action@v1.1.1
+        uses: docker/build-push-action@v2
         with:
           path: . # optional, default is .
           # Path to the Dockerfile (Default is '{path}/Dockerfile')
-          dockerfile: $GITHUB_WORKSPACE/soc-qradar-rule-exporter/Dockerfile# optional
+          dockerfile: Dockerfile# optional
           repository: "dpbinfosec/socdocs"
       
