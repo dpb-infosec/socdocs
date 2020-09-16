@@ -52,8 +52,8 @@ jobs:
         with:
           args: --docker
         env:
-          USERNAME: ${{ secrets.DOCKER_USERNAME }}
-          PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+          USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
+          PASSWORD:  ${{ secrets.DOCKERHUB_TOKEN }}
           DOCKERFILE: "Dockerfile"
           IMAGE_NAME: "dpbinfosec/socdocs"
           LATEST: "true"
