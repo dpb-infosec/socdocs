@@ -5,7 +5,7 @@ from jinja2 import Environment, FileSystemLoader
 import os
 
 
-RES_PATH = "res"
+RES_PATH = "doc_site/content/docs"
 
 
 class QRadarRule:
