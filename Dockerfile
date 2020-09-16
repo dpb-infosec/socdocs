@@ -21,3 +21,14 @@ RUN wget  -q -O /etc/apk/keys/sgerrand.rsa.pub https://alpine-pkgs.sgerrand.com/
 &&  apk --no-cache add "glibc-i18n-${GLIBC_VERSION}.apk" \
 &&  rm "glibc-i18n-${GLIBC_VERSION}.apk"
 
+RUN mkdir -p /usr/local/src \
+    && cd /usr/local/src \
+   
+    && mv hugo /usr/local/bin/hugo 
+
+COPY doc_site /doc_site
+WORKDIR /doc_site
+RUN /usr/local/bin/hugo
+
+FROM nginx
+COPY --from=hugo ./doc_site/public /usr/share/nginx/html
