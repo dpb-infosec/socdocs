@@ -88,12 +88,12 @@ for b64_rule in b64_rules:
     if rule.buildingBlock == "false":
         output = ruletemplate.render(rule=rule)
         rule_doc = open(RES_PATH + "/rules/" +
-                        re.sub('/', '_', rule.name) + ".md", 'w')
+                        re.sub('/', '_', rule.name) + ".md", 'w+')
         rule_doc.write(output)
         rule_doc.close()
     else:
         output = buildingtemplate.render(rule=rule)
         rule_doc = open(RES_PATH + "/building_blocks/" +
-                        re.sub('/', '_', rule.name) + ".md", 'w')
+                        re.sub('/', '_', rule.name) + ".md", 'w+')
         rule_doc.write(output)
         rule_doc.close()
