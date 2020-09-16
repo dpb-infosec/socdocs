@@ -49,6 +49,6 @@ jobs:
         with:
           path: . # optional, default is .
           # Path to the Dockerfile (Default is '{path}/Dockerfile')
-          dockerfile: Dockerfile# optional
-          repository: "dpbinfosec/socdocs"
-      
+          push: true
+          tags:  dpbinfosec/socdocs:latest
+          dockerfile: Dockerfile# optional      
