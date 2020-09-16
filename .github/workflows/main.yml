@@ -47,11 +47,14 @@ jobs:
         run: |
           python exportparser.py
         
-      - name: Build and push Docker images
-        uses: docker/build-push-action@v2
+      - name: Docker Build & Push to Docker Hub
+        uses: opspresso/action-docker@master
         with:
-          context: . # optional, default is .
-          # Path to the Dockerfile (Default is '{path}/Dockerfile')
-          push: true
-          tags:  dpbinfosec/socdocs:latest
-          file: Dockerfile# optional      
+          args: --docker
+        env:
+          USERNAME: ${{ secrets.DOCKER_USERNAME }}
+          PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+          DOCKERFILE: "Dockerfile"
+          IMAGE_NAME: "dpbinfosec/socdocs"
+          LATEST: "true"
+       
