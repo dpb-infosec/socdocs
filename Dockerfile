@@ -23,7 +23,7 @@ RUN wget  -q -O /etc/apk/keys/sgerrand.rsa.pub https://alpine-pkgs.sgerrand.com/
 
 RUN mkdir -p /usr/local/src \
     && cd /usr/local/src \
-   
+    && curl -L https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-64bit.tar.gz | tar -xz \
     && mv hugo /usr/local/bin/hugo 
 
 COPY doc_site /doc_site
