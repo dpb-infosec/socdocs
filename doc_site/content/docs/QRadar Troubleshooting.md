@@ -25,7 +25,7 @@ Based on this outcome modify the rules that pop-up, typically it will be because
 
 ## DSM Performance tuning
 
-DSM parsing performance may drop due to a poorly written regular expression. As with CRE performance drops, this may not be visible until the load increases on a specific parsing property. 
+DSM parsing performance may drop due to a poorly written regular expression in a custom DSM or logsource extension. As with CRE performance drops, this may not be visible until the load increases on a specific parsing property. 
 
 1. [Check Threadtop]({{< relref "#check-threadtop" >}}) on the **Event Collector** that is showing slow performance: `/opt/qradar/support/threadTop.sh -p 7777 -e ".*Event Parser.*"`. This should (currently) show you 8 threads with about 200 ms per thread.
 2. Create an expensive custom properties report: `/opt/qradar/support/findExpensiveCustomProperties.sh -D /tmp`. This will generate a tarball (.tar.gz) in the /tmp directory.
@@ -41,7 +41,7 @@ You can run the script without any parameters, and it will collect information f
 Below an example from our Consoles (Which also function as Event processors -> AIO):
 
 ```shell
-[root@qradar-primary support]#  /opt/qradar/support/threadTop.sh
+[root@qradar]#  /opt/qradar/support/threadTop.sh
 System Time: 10/09/2020 at 09:39:42.617
 Server          ID     MSecs  Name
 --------------  -----  -----  ------------------------------------------
@@ -79,7 +79,7 @@ It may be more interesting to pick a specific process that you want to investiga
 As the ports bound to these processes may change in the future, here's a command (and output) with which you can find all components and JMX ports for those components:
 
 ```shell
-[root@qradar-primary support]# grep -s JMXPORT /opt/qradar/systemd/env/*
+[root@qradar]# grep -s JMXPORT /opt/qradar/systemd/env/*
 /opt/qradar/systemd/env/accumulator:JMXPORT="7791"
 /opt/qradar/systemd/env/accumulator_rollup:JMXPORT="7795"
 /opt/qradar/systemd/env/arc_builder:JMXPORT=7792
@@ -106,5 +106,3 @@ As the ports bound to these processes may change in the future, here's a command
 /opt/qradar/systemd/env/tomcat-rm:JMXPORT=5791
 /opt/qradar/systemd/env/vis:JMXPORT=7790
 ```
-
-

@@ -7,7 +7,7 @@ weight: 10
 
 This subdirectory contains all rules.
 
-Rules trigger actions or alert on specific events  and may consist out of building blocks, or may 
+Rules trigger actions or alert on specific events  and may consist out of building blocks, or may if they are simple enough :)
 
 # How to Create a good rule
 
